@@ -26,9 +26,7 @@ If \code{NULL} will be transparent.}
 
 \item{duration}{Duration of animation showing the error message, set to \code{0} to have none.}
 
-\item{center_vertical}{Whether to center the message vertically and horizontally, a \code{boolean}.}
-
-\item{center_horizontal}{Whether to center the message vertically and horizontally, a \code{boolean}.}
+\item{center_vertical, center_horizontal}{Whether to center the message vertically and horizontally, a \code{boolean}.}
 
 \item{ids}{Ids of elements to apply the cleave to. If \code{NULL} applies to all error messages.}
 

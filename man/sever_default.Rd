@@ -7,8 +7,8 @@
 sever_default(
   title = "Whoops!",
   subtitle = "You have been disconnected",
-  button = "Reload",
-  button_class = "default"
+  button = c("Reload", "Reconnect"),
+  button_class = rep("default", 2)
 )
 }
 \arguments{

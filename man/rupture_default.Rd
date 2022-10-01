@@ -12,9 +12,7 @@ rupture_default(
 )
 }
 \arguments{
-\item{title}{Title and subtitle to display.}
-
-\item{subtitle}{Title and subtitle to display.}
+\item{title, subtitle}{Title and subtitle to display.}
 
 \item{button}{Text to display on button, passed to \code{\link[=reload_button]{reload_button()}}.}
 
