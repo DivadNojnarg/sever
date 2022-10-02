@@ -5,6 +5,17 @@ import { cleave } from './cleave';
 
 require('./style.css');
 
+$(document).on('shiny:connected', function(event) {
+  Shiny.shinyapp.onDisconnected = function() {
+    // Add gray-out overlay, if not already present
+    let $overlay = $('#shiny-disconnected-overlay');
+    if ($overlay.length === 0) {
+      $(document.body)
+        .append('<div id="shiny-disconnected-overlay"></div>');
+    }
+  };
+});
+
 Shiny.addCustomMessageHandler('sever-it', function(opts) {
 
   $(document).on('shiny:disconnected', function(event) {
