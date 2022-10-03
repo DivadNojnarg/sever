@@ -135,3 +135,34 @@ shinyApp(ui, server)
 ```
 
 ![](./img/sever_box.png)
+
+## Reconnect 
+You can use `reconnect_button` if you want to reconnect to the websocket instead of reloading the page. This way, you may restore the app in the state it was before crashing. Please carefully review the [documentation](https://shiny.rstudio.com/articles/reconnecting.html) about Shiny re connection, since some limitations exist. 
+
+```r
+library(shiny)
+library(sever)
+
+options(shiny.launch.browser = .rs.invokeShinyWindowExternal)
+
+ui <- fluidPage(
+  useSever(),
+  h1("sever"),
+  textInput("txt", "Enter some text ..."),
+  textOutput("message"),
+  tags$button(
+    "... Then click me to crash the app.",
+    onClick = "Shiny.shinyapp.$sendMsg(\"plop\")",
+    type = "button",
+    class = "btn btn-default"
+  )
+)
+
+server <- function(input, output, session){
+  sever(reconnect_button("... Then click me to reconnect where you stopped"))
+  output$message <- renderText(input$txt)
+  session$allowReconnect(TRUE)
+}
+
+shinyApp(ui, server)
+```
