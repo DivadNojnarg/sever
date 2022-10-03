@@ -50,7 +50,7 @@ const sever = (opts) => {
   document.body.appendChild(parent);
 }
 
-const removeSever = () => {
+export const removeSever = () => {
   let severed = document.getElementsByClassName("severed");
   for (let s of severed) {
     s.remove();
