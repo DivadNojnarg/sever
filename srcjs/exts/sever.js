@@ -12,6 +12,7 @@ Shiny.addCustomMessageHandler('sever-it', function(opts) {
   });
 
   $(document).on('shiny:connected', (e) => {
+    removeSever();
     $('#shiny-disconnected-overlay').remove();
     Shiny.shinyapp.onDisconnected = function() {};
   });

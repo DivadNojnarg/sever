@@ -58,7 +58,6 @@ const removeSever = () => {
 }
 
 export const handleSever = (opts) => {
-	removeSever();
 	changeDefault(opts);
 	sever(opts);
 }
