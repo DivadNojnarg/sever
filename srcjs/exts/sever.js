@@ -1,5 +1,5 @@
 import 'shiny';
-import { handleSever } from './sever-foo';
+import { handleSever, removeSever } from './sever-foo';
 import { watchActivity, unrupt } from './rupture';
 import { cleave } from './cleave';
 
